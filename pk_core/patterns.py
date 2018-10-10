@@ -5,7 +5,15 @@ __all__ = [ 'singleton', 'Borg' ]
 # --------------------------------------------------------------------
 
 def singleton(cls) :
-    """ singleton as a class decorator
+    """ singleton class decorator
+
+        @singleton
+        class Counter(object) :
+            def __init__(self) :
+                self.counter = 0
+            def inc(self) :
+                self.counter += 1
+        
     """
     instances = {}
 
@@ -20,7 +28,14 @@ def singleton(cls) :
 # --------------------------------------------------------------------
 
 class Borg(object) :
-    """ Borg
+    """ Borg with namespaces
+
+        Borg().mind = 'to share with all of us'
+
+        class PrivateBorg(Borg) :
+            __namespace__ = 'private'
+            def __init__(self) :
+                self.mind = 'to share with all in private'
     """
     __namespace__ = ''
     __shared_state = {}
