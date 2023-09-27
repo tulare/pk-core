@@ -28,7 +28,7 @@ setup(
     author='Tulare Regnus',
     author_email='tulare.paxgalactica@gmail.com',
     license=license(),
-    package_dir={'pk_core' : 'src/pk_core'},
+    package_dir={'' : 'src'},
     packages=['pk_core'],
     package_data={'pk_core' : []},
     include_package_data=True,
