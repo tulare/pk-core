@@ -1,40 +1,34 @@
-# -*- encoding: utf-8 -*-
-from __future__ import (
-    absolute_import,
-    print_function, division,
-    unicode_literals
-)
+# -*- coding: utf-8 -*-
+
+import logging
+from abc import ABC, abstractmethod
 
 __all__ = [ 'IObserver', 'IObservable', 'Observable' ]
-
-import abc
-
-# compatible with Python 2.x *and* 3.x
-ABC = abc.ABCMeta(str('ABC'), (object,), { '__slots__' : ()})
 
 # --- INTERFACES -----------------------------------------------
 
 class IObserver(ABC) :
 
-    @abc.abstractmethod
+    @abstractmethod
     def observe(self, *args, **kwargs) :
         pass
+# ---
 
 class IObservable(ABC) :
     
-    @abc.abstractmethod
+    @abstractmethod
     def add_observer(self, observer) :
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def remove_observer(self, observer) :
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def remove_all_observers(self) :
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def notify(self, *args, **kwargs) :
         pass
 

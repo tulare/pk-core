@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
-from __future__ import unicode_literals
+# -*- coding: utf-8 -*-
 
-__version__ = '0.1.2'
+__version__ = '0.1.3'
