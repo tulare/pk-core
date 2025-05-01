@@ -1,7 +1,13 @@
+# -*- coding: utf-8 -*-
+
 import unittest
 import pk_core
 
-class Test_global(unittest.TestCase) :
+from . import locator
+
+# ---
+
+class Test_00_global(unittest.TestCase) :
 
     def setUp(self) :
         pass
@@ -9,8 +15,10 @@ class Test_global(unittest.TestCase) :
     def tearDown(self):
         pass
 
-    def test_A(self) :
-        assert True, 'this test'
+    def test_00_Trivial(self) :
+        assert True, 'True basic trivial test'
+
+# --- 
         
 if __name__ == '__main__' :
     unittest.main()
